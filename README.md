@@ -1,6 +1,6 @@
 # Products Crud
 
-![PHP Version](https://img.shields.io/badge/PHP-8.3-blue)
+[![CI](https://github.com/pedromeirellesc/products-crud/actions/workflows/ci.yml/badge.svg)](https://github.com/pedromeirellesc/products-crud/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/pedromeirellesc/products-crud/graph/badge.svg)](https://codecov.io/gh/pedromeirellesc/products-crud) ![PHP Version](https://img.shields.io/badge/PHP-8.3-blue)
 
 CRUD para cadastro de produtos.
 
