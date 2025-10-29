@@ -10,7 +10,7 @@ class ProductControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testProductIndex(): void
+    public function test_product_index(): void
     {
         $response = $this->get('/');
 
@@ -19,7 +19,7 @@ class ProductControllerTest extends TestCase
         $response->assertViewHas('products');
     }
 
-    public function testProductCreate(): void
+    public function test_product_create(): void
     {
         $response = $this->get('/products/create');
 
@@ -27,7 +27,7 @@ class ProductControllerTest extends TestCase
         $response->assertViewIs('products.create');
     }
 
-    public function testProductStore(): void
+    public function test_product_store(): void
     {
         $response = $this->post('/products', [
             'codigo' => 'Product 1',
@@ -43,7 +43,7 @@ class ProductControllerTest extends TestCase
         ]);
     }
 
-    public function testProductStoreValidation(): void
+    public function test_product_store_validation(): void
     {
         $response = $this->post('/products', [
             'codigo' => '',
@@ -55,25 +55,25 @@ class ProductControllerTest extends TestCase
         $response->assertSessionHas('errors');
     }
 
-    public function testProductShow(): void
+    public function test_product_show(): void
     {
         $product = Product::factory()->create();
 
-        $response = $this->get('/products/' . $product->id);
+        $response = $this->get('/products/'.$product->id);
 
         $response->assertStatus(200);
         $response->assertViewIs('products.show');
         $response->assertViewHas('product');
     }
 
-    public function testProductShowWhenProductNotFound(): void
+    public function test_product_show_when_product_not_found(): void
     {
         $response = $this->get('/products/0');
 
         $response->assertStatus(404);
     }
 
-    public function testProductEdit(): void
+    public function test_product_edit(): void
     {
         $product = Product::factory()->create();
 
@@ -84,14 +84,14 @@ class ProductControllerTest extends TestCase
         $response->assertViewHas('product');
     }
 
-    public function testProductEditWhenProductNotFound(): void
+    public function test_product_edit_when_product_not_found(): void
     {
         $response = $this->get('/products/edit/0');
 
         $response->assertStatus(404);
     }
 
-    public function testProductUpdate(): void
+    public function test_product_update(): void
     {
         $product = Product::factory()->create();
 
@@ -109,7 +109,7 @@ class ProductControllerTest extends TestCase
         ]);
     }
 
-    public function testProductUpdateValidation(): void
+    public function test_product_update_validation(): void
     {
         $product = Product::factory()->create();
 
@@ -123,7 +123,7 @@ class ProductControllerTest extends TestCase
         $response->assertSessionHas('errors');
     }
 
-    public function testProductDelete(): void
+    public function test_product_delete(): void
     {
         $product = Product::factory()->create();
 

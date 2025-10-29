@@ -4,15 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
     public function index()
     {
         return view('products.index', [
-            'products' => Product::orderBy('created_at', 'desc')->paginate(10)
+            'products' => Product::orderBy('created_at', 'desc')->paginate(10),
         ]);
     }
 
@@ -33,14 +31,14 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('products.show', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
     public function edit(Product $product)
     {
         return view('products.edit', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
