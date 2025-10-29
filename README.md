@@ -1,6 +1,6 @@
-# SpotRate
+# Products Crud
 
-[![CI](https://github.com/pedromeirellesc/products-crud/actions/workflows/ci.yml/badge.svg)](https://github.com/pedromeirellesc/products-crud/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/pedromeirellesc/products-crud/graph/badge.svg)](https://codecov.io/gh/pedromeirellesc/products-crud) ![PHP Version](https://img.shields.io/badge/PHP-8.3-blue)
+![PHP Version](https://img.shields.io/badge/PHP-8.3-blue)
 
 CRUD para cadastro de produtos.
 
@@ -53,3 +53,4 @@ CRUD para cadastro de produtos.
 Para rodar os testes, execute o seguinte comando dentro do container:
 ```bash
 docker-compose exec app php artisan test
+```
